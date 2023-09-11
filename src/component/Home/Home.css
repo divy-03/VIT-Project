@@ -1,0 +1,10 @@
+.Landing-main {
+    height: calc(100vh - 95px);
+    /* height: 100vh; */
+    background: url('https://venngage-wordpress.s3.amazonaws.com/uploads/2022/09/business-background-15.png'), rgb(50, 50, 50, 0.5);
+    background-size: cover;
+    background-blend-mode: darken;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
