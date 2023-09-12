@@ -100,7 +100,6 @@ i:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .navCenter ul li {
@@ -140,7 +139,7 @@ i:hover {
     all: unset;
     /* width: 50px; */
     /* height: 30px; */
-    font-size: 1    6px;
+    font-size: 1 6px;
     background: transparent;
     border: none;
     position: relative;
@@ -208,7 +207,7 @@ i:hover {
     all: unset;
     /* width: 50px; */
     /* height: 30px; */
-    font-size: 1    6px;
+    font-size: 1 6px;
     background: transparent;
     border: 1px solid #28282d;
     position: relative;
@@ -285,4 +284,67 @@ i:hover {
 
 .cat-sec-hidden {
     display: none;
+}
+
+.catList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catList li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.catList li div {
+    background-color: #28282d;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+/* Initially hide the subCat */
+.subCat {
+    display: none;
+}
+
+/* When hovering over a list item, show its sibling subCat */
+.catList li:hover+.subCat {
+    display: block;
+}
+
+.cat-sec {
+    /* display: none; */
+    opacity: 0;
+    position: absolute;
+    top: 55px;
+    left: 0;    
+    height: 0;
+    width: 100vw;
+    background-color: rgb(25, 25, 25, 0.3);
+    backdrop-filter: blur(5px);
+    transition: all 0.4s;
+}
+
+.toggleCat:hover+.cat-sec,
+.cat-sec:hover {
+    /* display: block; */
+    opacity: 1;
+    height: calc(100vh - 55px);
+}
+
+
+.catList li div i {
+    font-size: 100px;
+}
+
+.catList li div:hover {
+    cursor: pointer;
 }

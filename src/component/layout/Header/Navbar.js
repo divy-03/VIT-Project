@@ -34,15 +34,118 @@ const Navbar = () => {
               <Link to="/products">Products</Link>
             </li>
             <li>
-              <button onClick={toggleCat}>Categories</button>
-            </li>
-            <li className={`cat-sec-${visibility}`}>
-              <div>
-                <ul>
-                  <li>Cat-1</li>
+              <button onClick={toggleCat} className="toggleCat">Categories</button>
+              <div className="cat-sec">
+                <ul class="catList">
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    Mobile
+                  </li>
+                  <div class="subCat">
+                    <ul>
+                      <li>
+                        <Link to="cat1">Cat1</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    Laptop
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    Music
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                    </div>
+                    Books
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-suitcase-rolling"></i>
+                    </div>
+                    Luggage
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-bicycle"></i>
+                    </div>
+                    Bicycle
+                  </li>
+                  <div class="subCat">
+                    <ul>
+                      <li>
+                        <Link to="cat1">Cat1</Link>
+                      </li>
+                    </ul>
+                  </div>
                 </ul>
               </div>
             </li>
+            {/* <li className={`cat-sec`}> */}
+              {/* <div>
+                <ul class="catList">
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    Mobile
+                  </li>
+                  <div class="subCat">
+                    <ul>
+                      <li>
+                        <Link to="cat1">Cat1</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    Laptop
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    Music
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                    </div>
+                    Books
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-suitcase-rolling"></i>
+                    </div>
+                    Luggage
+                  </li>
+                  <li>
+                    <div>
+                      <i class="fa-solid fa-bicycle"></i>
+                    </div>
+                    Bicycle
+                  </li>
+                  <div class="subCat">
+                    <ul>
+                      <li>
+                        <Link to="cat1">Cat1</Link>
+                      </li>
+                    </ul>
+                  </div>
+                </ul>
+              </div> */}
+            {/* </li> */}
             <li>
               <Link to="/new">What's new</Link>
             </li>
