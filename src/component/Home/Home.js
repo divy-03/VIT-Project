@@ -5,7 +5,9 @@ const Home = () => {
   return (
     <Fragment>
       <div className="Landing-main">
-        <p>Hello Welcome </p>
+        <pre>        Hello </pre>
+        <p className="XL">X</p>
+        <pre>changers</pre>
       </div>
     </Fragment>
   );

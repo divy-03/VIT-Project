@@ -7,24 +7,27 @@
     height: 40px;
 }
 
-.headBanner h1{
+.headBanner>h1 {
     font-weight: 200;
     font-size: 18px;
 }
 
-.headBanner div {
-    padding-bottom: 6px;
+.headBanner>div {
+    padding-bottom: 3px;
 }
 
-.headBanner div span, .headBanner div a{
+.headBanner>div>span,
+.headBanner>div>a {
     font-family: 'Shadows Into Light', cursive;
     color: rgb(160, 160, 160);
 }
 
-.headBanner div a {
+.headBanner>div>a {
     color: red;
+    cursor: pointer;
+    font-size: 18px;
 }
 
-.headBanner div a:hover {
+.headBanner>div>a:hover {
     text-decoration: underline;
 }

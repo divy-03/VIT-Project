@@ -4,11 +4,17 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [visibility, setVisibility] = useState("hidden");
+  const [catHeight, setCatHeight] = useState(0);
+  const [catOpacity, setCatOpacity] = useState(0);
   const toggleCat = () => {
     if (visibility === "show") {
       setVisibility("hidden");
+      setCatHeight("calc(100vh - 55px)");
+      setCatOpacity("1");
     } else {
       setVisibility("show");
+      setCatHeight("0");
+      setCatOpacity("0");
     }
   };
 
@@ -34,8 +40,14 @@ const Navbar = () => {
               <Link to="/products">Products</Link>
             </li>
             <li>
-              <button onClick={toggleCat} className="toggleCat">Categories</button>
-              <div className="cat-sec">
+              <button onClick={toggleCat} className="toggleCat">
+                Categories
+              </button>
+              <div
+                className={`cat-sec`}
+                style={{ height: `${catHeight}`, opacity: `${catOpacity}` }}
+              >
+                <h1 className="catHead">Browse through different Categories</h1>
                 <ul class="catList">
                   <li>
                     <div>
@@ -46,7 +58,13 @@ const Navbar = () => {
                   <div class="subCat">
                     <ul>
                       <li>
-                        <Link to="cat1">Cat1</Link>
+                        <Link to="/cat1">iPhones</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat2">Androids</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat3">Nothing</Link>
                       </li>
                     </ul>
                   </div>
@@ -56,24 +74,76 @@ const Navbar = () => {
                     </div>
                     Laptop
                   </li>
+                  <div class="subCat">
+                    <ul>
+                      <li>
+                        <Link to="/cat1">iPhones</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat2">Androids</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat3">Nothing</Link>
+                      </li>
+                    </ul>
+                  </div>
                   <li>
                     <div>
                       <i class="fa-solid fa-headphones"></i>
                     </div>
                     Music
                   </li>
+                  <div class="subCat">
+                    <ul>
+                      <li>
+                        <Link to="/cat1">iPhones</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat2">Androids</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat3">Nothing</Link>
+                      </li>
+                    </ul>
+                  </div>
                   <li>
                     <div>
                       <i class="fa-solid fa-book"></i>
                     </div>
                     Books
                   </li>
+                  <div class="subCat">
+                    <ul>
+                      <li>
+                        <Link to="/cat1">iPhones</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat2">Androids</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat3">Nothing</Link>
+                      </li>
+                    </ul>
+                  </div>
                   <li>
                     <div>
                       <i class="fa-solid fa-suitcase-rolling"></i>
                     </div>
                     Luggage
                   </li>
+                  <div class="subCat">
+                    <ul>
+                      <li>
+                        <Link to="/cat1">iPhones</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat2">Androids</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat3">Nothing</Link>
+                      </li>
+                    </ul>
+                  </div>
                   <li>
                     <div>
                       <i class="fa-solid fa-bicycle"></i>
@@ -83,69 +153,20 @@ const Navbar = () => {
                   <div class="subCat">
                     <ul>
                       <li>
-                        <Link to="cat1">Cat1</Link>
+                        <Link to="/cat1">iPhones</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat2">Androids</Link>
+                      </li>
+                      <li>
+                        <Link to="/cat3">Nothing</Link>
                       </li>
                     </ul>
                   </div>
+                  <button className="closeCat" onClick={toggleCat}>X</button>
                 </ul>
               </div>
             </li>
-            {/* <li className={`cat-sec`}> */}
-              {/* <div>
-                <ul class="catList">
-                  <li>
-                    <div>
-                      <i class="fa-solid fa-mobile-screen-button"></i>
-                    </div>
-                    Mobile
-                  </li>
-                  <div class="subCat">
-                    <ul>
-                      <li>
-                        <Link to="cat1">Cat1</Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <li>
-                    <div>
-                      <i class="fa-solid fa-laptop"></i>
-                    </div>
-                    Laptop
-                  </li>
-                  <li>
-                    <div>
-                      <i class="fa-solid fa-headphones"></i>
-                    </div>
-                    Music
-                  </li>
-                  <li>
-                    <div>
-                      <i class="fa-solid fa-book"></i>
-                    </div>
-                    Books
-                  </li>
-                  <li>
-                    <div>
-                      <i class="fa-solid fa-suitcase-rolling"></i>
-                    </div>
-                    Luggage
-                  </li>
-                  <li>
-                    <div>
-                      <i class="fa-solid fa-bicycle"></i>
-                    </div>
-                    Bicycle
-                  </li>
-                  <div class="subCat">
-                    <ul>
-                      <li>
-                        <Link to="cat1">Cat1</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </ul>
-              </div> */}
-            {/* </li> */}
             <li>
               <Link to="/new">What's new</Link>
             </li>
@@ -165,8 +186,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navRight">
-          <button class="button-86">Sell</button>
-          <button class="button-87">Rent</button>
+          <Link to="/sell" class="button-86">Sell</Link>
+          <Link to="/rent" class="button-87">Rent</Link>
         </div>
       </nav>
     </Fragment>

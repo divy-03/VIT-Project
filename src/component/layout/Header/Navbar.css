@@ -14,6 +14,7 @@
     position: sticky;
     top: 0;
     background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
 }
 
 .navLeft {
@@ -96,34 +97,34 @@ i:hover {
     align-items: center;
 }
 
-.navCenter ul {
+.navCenter>ul {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.navCenter ul li {
+.navCenter>ul li {
     padding: 10px;
 }
 
-.navCenter ul li button {
+.navCenter>ul>li>button {
     background-color: transparent;
     border: none;
     color: gray;
     transition: all 0.4s;
 }
 
-.navCenter ul li button:hover {
+.navCenter>ul>li>button:hover {
     cursor: pointer;
     color: white;
 }
 
-.navCenter ul li a {
+.navCenter>ul>li>a {
     color: gray;
     transition: all 0.4s;
 }
 
-.navCenter ul li a:hover {
+.navCenter>ul>li>a:hover {
     color: white;
 }
 
@@ -272,34 +273,43 @@ i:hover {
     transform: translate(0, 5%);
 }
 
-.cat-sec-show {
-    /* display: none; */
+/* .cat-sec-show {
+    display: none;
     position: absolute;
     top: 47px;
     height: calc(100vh - 55px);
     width: 100vw;
-    background-color: rgb(25, 25, 25, 0.3);
+    background-color: rgb(25, 25, 25, 1);
     backdrop-filter: blur(5px);
 }
 
 .cat-sec-hidden {
     display: none;
+} */
+
+.catHead {
+    text-align: center;
+    padding: 20px;
+    font-weight: 200;
+    font-size: 40px;
+    /* font-family: 'Shadows Into Light', cursive; */
 }
 
 .catList {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.catList li {
+.catList>li {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.catList li div {
+.catList>li>div {
     background-color: #28282d;
     width: 200px;
     height: 200px;
@@ -307,17 +317,45 @@ i:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
+    /* font-size: 40px; */
 }
 
 /* Initially hide the subCat */
 .subCat {
-    display: none;
+    /* display: none; */
+    /* border: 2px solid; */
+    /* border-top-left-radius: 50%; */
+    opacity: 0;
+    width: 0;
+    transition: all 0.4s;
+    /* position: absolute;
+    top: 400px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subCat>ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subCat>ul>li>a {
+    text-align: center;
+}
+
+.subCat:hover {
+    opacity: 1;
+    width: 120px;
 }
 
 /* When hovering over a list item, show its sibling subCat */
-.catList li:hover+.subCat {
-    display: block;
+.catList>li:hover+.subCat {
+    /* display: block; */
+    opacity: 1;
+    width: 120px;
 }
 
 .cat-sec {
@@ -325,26 +363,38 @@ i:hover {
     opacity: 0;
     position: absolute;
     top: 55px;
-    left: 0;    
+    left: 0;
     height: 0;
     width: 100vw;
-    background-color: rgb(25, 25, 25, 0.3);
-    backdrop-filter: blur(5px);
+    background-color: rgb(25, 25, 25, 0.4);
+    backdrop-filter: blur(8px);
     transition: all 0.4s;
 }
 
-.toggleCat:hover+.cat-sec,
-.cat-sec:hover {
-    /* display: block; */
-    opacity: 1;
-    height: calc(100vh - 55px);
+.closeCat {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #ffff;
+    border: none;
+    font-size: 22px;
+    color: red;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s;
 }
 
+.closeCat:hover {
+    background-color: red;
+    color: white;
+}
 
-.catList li div i {
+.catList>li>div>i {
     font-size: 100px;
 }
 
-.catList li div:hover {
+.catList>li>div:hover {
     cursor: pointer;
 }

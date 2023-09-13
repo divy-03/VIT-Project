@@ -7,4 +7,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+.XL {
+    font-family: 'poppins', monospace;
+    /* font-family: 'Shadows Into Light', cursive; */
+    color: red;
+    font-size: 35rem;
+    transform: rotate(-3deg);
+    z-index: 1;
 }

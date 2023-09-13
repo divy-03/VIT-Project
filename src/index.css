@@ -9,3 +9,23 @@
 body {
   background-color: black;
 }
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoBig {
+  height: 250px;
+  width: 250px;
+  background-color: rgb(40, 40, 40, 1);
+  border-radius: 100%;
+}
