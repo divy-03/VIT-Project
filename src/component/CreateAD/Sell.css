@@ -9,7 +9,12 @@
 }
 
 .sellContainer {
-    background-color: gray;
+    background-color: rgb(255, 85, 85);
+    z-index: 2;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    transition: all 4s;
 }
 
 .sellContainer>form>select {
@@ -20,4 +25,32 @@
 .sellContainer>form>select>option {
     /* background-color: rebeccapurple; */
     padding: 10px;  
+}
+
+.sellHead {
+    font-size: 32px;
+    color: rgb(255, 0, 0);
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    z-index: 2;
+}
+
+.bgSellTxt {
+    font-size: 220px ;
+    position: absolute;
+    text-align: center;
+    line-height: 320px;
+    opacity: 0.4;
+    z-index: 1;
+    transition: all 4s;
+}
+.bgSellTxt:hover {
+    color: red;
+}
+
+.bgSellTxt:hover ~ .sellContainer {
+    background-color: white; /* Change the color of .sellContainer when .bgSellTxt is hovered */
+    color: red;
 }

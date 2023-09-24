@@ -28,4 +28,10 @@ body {
   width: 250px;
   background-color: rgb(40, 40, 40, 1);
   border-radius: 100%;
+  font-size: 4rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }

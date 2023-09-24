@@ -317,6 +317,7 @@ i:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
     /* font-size: 40px; */
 }
 
@@ -344,6 +345,13 @@ i:hover {
 
 .subCat>ul>li>a {
     text-align: center;
+    color: rgb(164, 164, 164);
+    transition: all 0.4s;
+    z-index: -1;
+}
+
+.subCat>ul>li>a:hover {
+    color: white;
 }
 
 .subCat:hover {

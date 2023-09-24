@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [visibility, setVisibility] = useState("hidden");
+  const [display, setDisplay] = useState("none");
   const [catHeight, setCatHeight] = useState(0);
   const [catOpacity, setCatOpacity] = useState(0);
   const toggleCat = () => {
@@ -11,7 +12,9 @@ const Navbar = () => {
       setVisibility("hidden");
       setCatHeight("calc(100vh - 55px)");
       setCatOpacity("1");
+      setDisplay("block");
     } else {
+      setDisplay("none");
       setVisibility("show");
       setCatHeight("0");
       setCatOpacity("0");
@@ -163,7 +166,13 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </div>
-                  <button className="closeCat" onClick={toggleCat}>X</button>
+                  <button
+                    className="closeCat"
+                    onClick={toggleCat}
+                    style={{ display: `${display}` }}
+                  >
+                    X
+                  </button>
                 </ul>
               </div>
             </li>
@@ -186,8 +195,12 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navRight">
-          <Link to="/sell" class="button-86">Sell</Link>
-          <Link to="/rent" class="button-87">Rent</Link>
+          <Link to="/sell" class="button-86">
+            Sell
+          </Link>
+          <Link to="/rent" class="button-87">
+            Rent
+          </Link>
         </div>
       </nav>
     </Fragment>

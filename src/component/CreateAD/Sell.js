@@ -5,7 +5,9 @@ const Sell = () => {
   return (
     <Fragment>
       <div className="sellBody flex-col">
-        <div className="logoBig"></div>
+        <p className="sellHead">SELL YOUR PRODUCTS ONLINE</p>
+        <p className="bgSellTxt">Sell Rent Exchange Buy</p>
+        <div className="logoBig">VIT LOGO</div>
         <div className="sellContainer">
           <form className="flex-col">
             <p>Please select a category</p>
