@@ -1,9 +1,11 @@
 import React, { Fragment } from "react";
 import "./Sell.css";
+import MetaData from "../layout/Title/MetaData";
 
 const Sell = () => {
   return (
     <Fragment>
+      <MetaData title={"vitXchange-Sell your products online"} />
       <div className="sellBody flex-col">
         <p className="sellHead">SELL YOUR PRODUCTS ONLINE</p>
         <p className="bgSellTxt">Sell Rent Exchange Buy</p>
