@@ -1,24 +1,25 @@
-import React, { Fragment, useState } from "react";
+// import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [visibility, setVisibility] = useState("hidden");
-  const [display, setDisplay] = useState("none");
-  const [catHeight, setCatHeight] = useState(0);
-  const [catOpacity, setCatOpacity] = useState(0);
+  // const [visibility, setVisibility] = useState("hidden");
+  // const [display, setDisplay] = useState("none");
+  // const [catHeight, setCatHeight] = useState(0);
+  // const [catOpacity, setCatOpacity] = useState(0);
   const toggleCat = () => {
-    if (visibility === "show") {
-      setVisibility("hidden");
-      setCatHeight("calc(100vh - 55px)");
-      setCatOpacity("1");
-      setDisplay("block");
-    } else {
-      setDisplay("none");
-      setVisibility("show");
-      setCatHeight("0");
-      setCatOpacity("0");
-    }
+    // if (visibility === "show") {
+    // //   setVisibility("hidden");
+    // //   setCatHeight("calc(100vh - 55px)");
+    // //   setCatOpacity("1");
+    // //   setDisplay("block");
+    // // } else {
+    // //   setDisplay("none");
+    // //   setVisibility("show");
+    // //   setCatHeight("0");
+    // //   setCatOpacity("0");
+    // // }
   };
 
   return (
@@ -46,7 +47,7 @@ const Navbar = () => {
               <button onClick={toggleCat} className="toggleCat">
                 Categories
               </button>
-              <div
+              {/* <div
                 className={`cat-sec`}
                 style={{ height: `${catHeight}`, opacity: `${catOpacity}` }}
               >
@@ -174,7 +175,7 @@ const Navbar = () => {
                     X
                   </button>
                 </ul>
-              </div>
+              </div> */}
             </li>
             <li>
               <Link to="/new">What's new</Link>

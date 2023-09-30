@@ -5,6 +5,9 @@
     align-items: center;
     background-color: rgb(40, 40, 40, 0.8);
     height: 40px;
+    border-bottom: 1px solid gray;
+    width: 90%;
+    margin: auto;
 }
 
 .headBanner>h1 {

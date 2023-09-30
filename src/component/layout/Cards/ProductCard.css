@@ -1,0 +1,29 @@
+.proCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px;
+    /* border: 2px solid white; */
+    padding: 10px;
+    /* border-radius: 10px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: all 0.4s;
+    overflow: hidden;
+    background-color: black;
+
+}
+
+.proCardContainer:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transform: translateY(-5px);
+}
+
+.name {
+    font-size: 30px;
+}
+
+.price {
+    font-size: 20px;
+    color: red;
+}
