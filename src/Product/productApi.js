@@ -5,15 +5,24 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const productApi = createApi({
   reducerPath: "productApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:4000/api/products/sort",
+    baseUrl: "http://localhost:4000/api",
   }),
   endpoints: (builder) => ({
+    // Get Sorted Products
     getSortedProducts: builder.query({
-      query: ({ sortBy }) => `/${sortBy}`,
+      query: ({ sortBy, keyword, category }) => {
+        const categoryParam = category ? `&category=${category}` : "";
+        return `/products/sort/${sortBy}?keyword=${keyword}${categoryParam}`;
+      },
+    }),
+
+    // Get Product Details
+    getProDetails: builder.query({
+      query: (id) => `/product/${id}`,
     }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetSortedProductsQuery } = productApi;
+export const { useGetSortedProductsQuery, useGetProDetailsQuery } = productApi;

@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.loading {
+    width: 100vw;
+    height: calc(100vh - 95px);
+    /* background-color: rgb(40, 40, 40); */
+    display: grid;
+    place-items: center;
+    max-width: 100%;
+}
+
+.loading>div {
+    width: 70px;
+    height: 70px;
+    border-bottom: 3px solid red;
+    border-radius: 60%;
+    animation: loadingRotate 700ms linear infinite;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 40px;
+    margin-bottom: 20px;
+}
+
+@keyframes loadingRotate {
+    to {
+        transform: rotateZ(360deg);
+    }
+}

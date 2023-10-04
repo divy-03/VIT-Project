@@ -7,6 +7,8 @@ import Home from "./component/Home/Home";
 import Sell from "./component/CreateAD/Sell.js";
 import Header from "./component/layout/Header/Header.js";
 import Products from "./component/Products/Products";
+import ProductDetails from "./component/Products/ProductDetails";
+import Loader from "./component/layout/Loader/Loader";
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
         <Routes>
           <Route exact path="/" Component={Home} />
           <Route exact path="/sell" Component={Sell} />
-          <Route exact path="products" Component={Products} />
+          <Route exact path="/products" Component={Products} />
+          <Route exact path="/products/search/:keyword" Component={Products} />
+          <Route exact path="/product/:id" Component={ProductDetails} />
         </Routes>
       </Router>
     </Fragment>

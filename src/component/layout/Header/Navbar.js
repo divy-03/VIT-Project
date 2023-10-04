@@ -1,10 +1,12 @@
-// import React, { Fragment, useState } from "react";
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
+// import React, { Fragment } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  // const [visibility, setVisibility] = useState("hidden");
+  const [visibility, setVisibility] = useState("hidden");
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
   // const [display, setDisplay] = useState("none");
   // const [catHeight, setCatHeight] = useState(0);
   // const [catOpacity, setCatOpacity] = useState(0);
@@ -22,18 +24,35 @@ const Navbar = () => {
     // // }
   };
 
+  const toggleSearch = () => {
+    if (visibility === "hidden") {
+      setVisibility("show");
+    } else {
+      setVisibility("hidden");
+    }
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (keyword.trim()) {
+      navigate(`/products?keyword=${keyword}`);
+    } else {
+      navigate(`/products`);
+    }
+  };
+
   return (
     <Fragment>
       <nav className="navbar">
         <div className="navLeft">
           {/* <img src="/logoX.png" alt="X" /> */}
-          <div className="logo">
+          <Link  to="/" className="logo">
             <span className="V">V</span>
             <span className="X">X</span>
-          </div>
-          <span className="logoTxt">VIT</span>
-          <span className="X">X</span>
-          <span className="logoTxt">change</span>
+          </Link>
+          <Link to="/" className="logoTxt">VIT</Link>
+          <Link to="/" className="X">X</Link>
+          <Link to="/" className="logoTxt">change</Link>
         </div>
         <div className="navCenter">
           <ul>
@@ -189,9 +208,24 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <button className="searchBtn">
-                <i className="fa fa-solid fa-magnifying-glass"></i>
-              </button>
+              <div className="searchContainer flex-row">
+                <button className="searchBtn" onClick={toggleSearch}>
+                  <i className="fa fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input
+                  type="text"
+                  className={`searchBar-${visibility}`}
+                  placeholder="Search Here..."
+                  onChange={(e) => setKeyword(e.target.value)}
+                />
+                <button
+                  // className="search-btn"
+                  onClick={handleSearch}
+                  className={`searchBar-${visibility}`}
+                >
+                  Search
+                </button>
+              </div>
             </li>
           </ul>
         </div>

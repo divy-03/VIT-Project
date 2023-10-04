@@ -5,11 +5,16 @@ import MetaData from "../layout/Title/MetaData";
 import { useGetSortedProductsQuery } from "../../Product/productApi";
 import Loader from "../layout/Loader/Loader.js";
 import ProductCard from "../layout/Cards/ProductCard.js";
+import { useLocation } from "react-router-dom";
 
 const Products = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const keyword = queryParams.get("keyword");
+  const category = queryParams.get("category");
+
   const [sortBy, setSortBy] = useState("time");
   const toggleSort = () => {
-    console.log("Hello");
     if (sortBy === "time") {
       setSortBy("asc");
     } else if (sortBy === "asc") {
@@ -21,6 +26,8 @@ const Products = () => {
 
   const { data, error, isLoading } = useGetSortedProductsQuery({
     sortBy: sortBy,
+    keyword: keyword || "",
+    category: category || "",
   });
 
   return (
@@ -37,10 +44,12 @@ const Products = () => {
         </div>
       ) : (
         <Fragment>
-          <button className="sort-btn" onClick={toggleSort}>
-            Sort By {sortBy === "time" ? "Time" : "Price"}{" "}
-            {sortBy !== "time" ? (sortBy === "asc" ? "↑" : "↓") : null}
-          </button>
+          <div className="filters">
+            <button className="sort-btn" onClick={toggleSort}>
+              Sort By {sortBy === "time" ? "Time" : "Price"}{" "}
+              {sortBy !== "time" ? (sortBy === "asc" ? "↑" : "↓") : null}
+            </button>
+          </div>
 
           <div className="containerProduct">
             {data.products.length === 0 ? (

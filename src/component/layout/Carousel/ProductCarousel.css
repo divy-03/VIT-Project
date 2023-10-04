@@ -1,0 +1,156 @@
+.detailCarousel {
+  height: 33vw;
+  width: 33vw;
+  outline: 2 px solid blue;
+  position: relative;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.detailSlide {
+  width: 33vw;  
+  height: 33vw;
+  transition: all ease 2s;
+  opacity: 1;
+}
+
+.detailSlide-hidden {
+  display: none;
+  opacity: 0;
+}
+
+.fa-arrowDetail {
+  position: absolute;
+  width: 2rem;
+  color: black;
+  background-color: rgba(228, 228, 228, 0.4);
+  border-radius: .5em;
+  cursor: pointer;
+  z-index: 999;
+  padding: 3rem 0.8rem;
+  top: calc(50% - 3.5rem);
+  transition: all ease-in-out 0.3s;
+  transition-delay: 0.3s;
+  font-size: .8rem !important;
+  text-align: center !important;
+  line-height: normal !important;
+}
+
+.detailIndicators {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  bottom: -25px;
+  left: 47%;
+  /* right: 50%; */
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  .detailCarousel {
+    width: 35vw;
+    height: 35vw;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .detailCarousel {
+    width: 50vw;
+    height: 50vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .detailCarousel {
+    width: 90vw;
+    height: 90vw;
+  }
+}
+
+.carousel {
+  /* width: 90%; */
+  height: 20vw;
+  position: relative;
+  margin: 0 5px;
+  box-shadow: rgba(67, 61, 61, 0.08) 0px 4px 12px;
+}
+
+.carousel:hover .fa-arrow {
+  opacity: 1;
+}
+
+.slide {
+  width: calc(99vw - 10px);
+  /* object-fit: cover; */
+  height: 100%;
+  transition: all ease 2s;
+  opacity: 1;
+}
+
+.slide-hidden {
+  display: none;
+  opacity: 0;
+}
+
+.fa-arrow {
+  opacity: 0;
+  position: absolute;
+  width: 2rem;
+  /* height: 4rem; */
+  color: black;
+  background-color: rgba(255, 255, 255, 0.405);
+  padding: 3rem 0.8rem;
+  top: calc(50% - 3.5rem);
+  cursor: pointer;
+  z-index: 999;
+  transition: all ease-in-out 0.3s;
+  transition-delay: 0.3s;
+  font-size: .8rem !important;
+  text-align: center !important;
+  line-height: normal !important;
+  /* border-radius: 50px; */
+  /* box-shadow: 0px 0px 10px rgb(54, 54, 54); */
+}
+
+.fa-arrow-right {
+  right: 0rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.fa-arrow-left {
+  left: 0rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.indicators {
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  left: 50%;
+}
+
+.indicator {
+  background-color: white;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px #555;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+
+.indicator-inactive {
+  background-color: #aba8a8;
+}
+
+@media screen and (max-width: 600px) {
+  .carousel {
+    height: 200px;
+  }
+}
