@@ -38,4 +38,20 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 2;
+  margin: auto;
+}
+
+
+.vitLogo {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(40, 40, 40, 1);
+  border-radius: 100%;
+  font-size: 4rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  margin: auto;
 }

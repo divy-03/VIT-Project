@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 // import React, { Fragment } from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useGetMeQuery } from "../../../User/userApi";
 
 const Navbar = () => {
   const [visibility, setVisibility] = useState("hidden");
@@ -23,6 +24,9 @@ const Navbar = () => {
     // //   setCatOpacity("0");
     // // }
   };
+
+  const { data } = useGetMeQuery();
+  console.log(data);
 
   const toggleSearch = () => {
     if (visibility === "hidden") {
@@ -46,13 +50,19 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navLeft">
           {/* <img src="/logoX.png" alt="X" /> */}
-          <Link  to="/" className="logo">
+          <Link to="/" className="logo">
             <span className="V">V</span>
             <span className="X">X</span>
           </Link>
-          <Link to="/" className="logoTxt">VIT</Link>
-          <Link to="/" className="X">X</Link>
-          <Link to="/" className="logoTxt">change</Link>
+          <Link to="/" className="logoTxt">
+            VIT
+          </Link>
+          <Link to="/" className="X">
+            X
+          </Link>
+          <Link to="/" className="logoTxt">
+            change
+          </Link>
         </div>
         <div className="navCenter">
           <ul>
@@ -71,14 +81,14 @@ const Navbar = () => {
                 style={{ height: `${catHeight}`, opacity: `${catOpacity}` }}
               >
                 <h1 className="catHead">Browse through different Categories</h1>
-                <ul class="catList">
+                <ul className="catList">
                   <li>
                     <div>
-                      <i class="fa-solid fa-mobile-screen-button"></i>
+                      <i className="fa-solid fa-mobile-screen-button"></i>
                     </div>
                     Mobile
                   </li>
-                  <div class="subCat">
+                  <div className="subCat">
                     <ul>
                       <li>
                         <Link to="/cat1">iPhones</Link>
@@ -93,11 +103,11 @@ const Navbar = () => {
                   </div>
                   <li>
                     <div>
-                      <i class="fa-solid fa-laptop"></i>
+                      <i className="fa-solid fa-laptop"></i>
                     </div>
                     Laptop
                   </li>
-                  <div class="subCat">
+                  <div className="subCat">
                     <ul>
                       <li>
                         <Link to="/cat1">iPhones</Link>
@@ -112,11 +122,11 @@ const Navbar = () => {
                   </div>
                   <li>
                     <div>
-                      <i class="fa-solid fa-headphones"></i>
+                      <i className="fa-solid fa-headphones"></i>
                     </div>
                     Music
                   </li>
-                  <div class="subCat">
+                  <div className="subCat">
                     <ul>
                       <li>
                         <Link to="/cat1">iPhones</Link>
@@ -131,11 +141,11 @@ const Navbar = () => {
                   </div>
                   <li>
                     <div>
-                      <i class="fa-solid fa-book"></i>
+                      <i className="fa-solid fa-book"></i>
                     </div>
                     Books
                   </li>
-                  <div class="subCat">
+                  <div className="subCat">
                     <ul>
                       <li>
                         <Link to="/cat1">iPhones</Link>
@@ -150,11 +160,11 @@ const Navbar = () => {
                   </div>
                   <li>
                     <div>
-                      <i class="fa-solid fa-suitcase-rolling"></i>
+                      <i className="fa-solid fa-suitcase-rolling"></i>
                     </div>
                     Luggage
                   </li>
-                  <div class="subCat">
+                  <div className="subCat">
                     <ul>
                       <li>
                         <Link to="/cat1">iPhones</Link>
@@ -169,11 +179,11 @@ const Navbar = () => {
                   </div>
                   <li>
                     <div>
-                      <i class="fa-solid fa-bicycle"></i>
+                      <i className="fa-solid fa-bicycle"></i>
                     </div>
                     Bicycle
                   </li>
-                  <div class="subCat">
+                  <div className="subCat">
                     <ul>
                       <li>
                         <Link to="/cat1">iPhones</Link>
@@ -230,12 +240,13 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navRight">
-          <Link to="/sell" class="button-86">
+          <Link to="/sell" className="button-86">
             Sell
           </Link>
-          <Link to="/rent" class="button-87">
+          <Link to="/rent" className="button-87">
             Rent
           </Link>
+          <button className="button-86"></button>
         </div>
       </nav>
     </Fragment>

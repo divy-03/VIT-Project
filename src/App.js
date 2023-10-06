@@ -8,7 +8,7 @@ import Sell from "./component/CreateAD/Sell.js";
 import Header from "./component/layout/Header/Header.js";
 import Products from "./component/Products/Products";
 import ProductDetails from "./component/Products/ProductDetails";
-import Loader from "./component/layout/Loader/Loader";
+import LoginSignUp from "./component/User/LoginSignUp";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           <Route exact path="/products" Component={Products} />
           <Route exact path="/products/search/:keyword" Component={Products} />
           <Route exact path="/product/:id" Component={ProductDetails} />
+          <Route exact path="/account" Component={LoginSignUp} />
         </Routes>
       </Router>
     </Fragment>
