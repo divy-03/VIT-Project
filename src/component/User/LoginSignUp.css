@@ -78,7 +78,18 @@
     transform: translateY(-100%) translateX(100vmax);
 }
 
-.signUpName, .signUpEmail, .signUpPassword {
+.loginForm>h1 {
+    font-size: 2vmax;
+    margin-bottom: 10px;
+}
+
+.loginForm>p {
+    margin-bottom: 20px;
+}
+
+.signUpName,
+.signUpEmail,
+.signUpPassword {
     transform: translateY(60px);
 }
 
@@ -89,14 +100,14 @@
     align-items: center;
 }
 
-#registerImage > img {
+#registerImage>img {
     width: 3vmax;
     height: 3vmax;
     border-radius: 100;
     margin: 10px;
 }
 
-#registerImage>input{
+#registerImage>input {
     display: flex;
     border: 1px solid white;
     outline: none;
@@ -198,8 +209,24 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+.forgotBtn {
+    margin-top: 20px;
+    color: white;
+    padding: 10px 20px;
+    background-color: rgb(156, 5, 5);
+    border: 1px solid black;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.5s;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
 .loginBtn:hover,
-.signUpBtn:hover {
+.signUpBtn:hover,
+.forgotBtn:hover {
     /* transform: translateY(-3px); */
     background-color: red;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);

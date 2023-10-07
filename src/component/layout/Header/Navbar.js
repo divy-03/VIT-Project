@@ -2,12 +2,14 @@ import React, { Fragment, useState } from "react";
 // import React, { Fragment } from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useGetMeQuery } from "../../../User/userApi";
+import { useGetMeQuery, useLogoutUserMutation } from "../../../User/userApi";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [visibility, setVisibility] = useState("hidden");
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();
+  const [logoutUser] = useLogoutUserMutation();
   // const [display, setDisplay] = useState("none");
   // const [catHeight, setCatHeight] = useState(0);
   // const [catOpacity, setCatOpacity] = useState(0);
@@ -42,6 +44,25 @@ const Navbar = () => {
       navigate(`/products?keyword=${keyword}`);
     } else {
       navigate(`/products`);
+    }
+  };
+
+  const handleLogOut = async () => {
+    try {
+      const response = await logoutUser({});
+
+      console.log("Password reset request successful:", response);
+
+      if (response.error) {
+        toast.error(response.error.data.error);
+      } else {
+        if (response.data.success) {
+          toast.success(response.data.message);
+        }
+      }
+    } catch (error) {
+      // Handle any errors (e.g., display an error message)
+      toast.error(error);
     }
   };
 
@@ -246,7 +267,9 @@ const Navbar = () => {
           <Link to="/rent" className="button-87">
             Rent
           </Link>
-          <button className="button-86"></button>
+          <button className="button-86" onClick={handleLogOut}>
+            LogOut
+          </button>
         </div>
       </nav>
     </Fragment>

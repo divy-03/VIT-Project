@@ -2,6 +2,7 @@ import React, { Fragment, useRef, useState } from "react";
 import "./LoginSignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAddUserMutation, useLoginUserMutation } from "../../User/userApi";
+import { toast } from "react-toastify";
 // import Loader from "../layout/Loader/Loader";
 
 const LoginSignUp = () => {
@@ -35,6 +36,7 @@ const LoginSignUp = () => {
       password: loginPassword,
     });
     if (result.error) {
+      toast.error(result.error.data.error);
     } else {
       if (result.data.success === true) {
         navigate("/");
@@ -48,6 +50,7 @@ const LoginSignUp = () => {
     const result = await addUser({ name, email, password, avatar });
 
     if (result.error) {
+      toast.error(result.error.data.error);
     } else {
       if (result.data.success === true) {
         navigate("/");

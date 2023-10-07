@@ -24,12 +24,34 @@ export const userApi = createApi({
       }),
     }),
 
+    // LogOut User
+    logoutUser: builder.mutation({
+      query: () => ({
+        url: "/auth/logout",
+        method: "GET",
+      }),
+    }),
+
+    // Forgot Password
+    forgotPassword: builder.mutation({
+      query: (email) => ({
+        url: "/password/forgot",
+        method: "POST",
+        body: email,
+      }),
+    }),
+
     // Get User Details
     getMe: builder.query({
-      query: () => "/me",
+      query: "/me", // Use a string here
     }),
   }),
 });
 
-export const { useAddUserMutation, useLoginUserMutation, useGetMeQuery } =
-  userApi;
+export const {
+  useAddUserMutation,
+  useLoginUserMutation,
+  useGetMeQuery,
+  useForgotPasswordMutation,
+  useLogoutUserMutation,
+} = userApi;
