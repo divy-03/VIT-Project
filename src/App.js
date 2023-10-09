@@ -12,6 +12,9 @@ import Products from "./component/Products/Products";
 import ProductDetails from "./component/Products/ProductDetails";
 import LoginSignUp from "./component/User/LoginSignUp";
 import ForgotPassword from "./component/User/ForgotPassword";
+// import Footer from "./component/layout/Footer/Footer";
+import Loader from "./component/layout/Loader/Loader";
+import createProduct from "./component/CreateAD/CreateProduct";
 
 function App() {
   return (
@@ -21,24 +24,29 @@ function App() {
         <Routes>
           <Route exact path="/" Component={Home} />
           <Route exact path="/sell" Component={Sell} />
+          <Route exact path="/product/new" Component={createProduct} />
           <Route exact path="/products" Component={Products} />
           <Route exact path="/products/search/:keyword" Component={Products} />
           <Route exact path="/product/:id" Component={ProductDetails} />
           <Route exact path="/account" Component={LoginSignUp} />
           <Route exact path="/password/forgot" Component={ForgotPassword} />
+          <Route exact path="/loader" Component={Loader} />
         </Routes>
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
+        {/* <Footer /> */}
+        <div className="toastContainer">
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
+        </div>
       </Router>
     </Fragment>
   );

@@ -1,0 +1,89 @@
+.footContainer {
+    background-color: #3e3e3ec9;
+    padding: 20px 0;
+}
+
+.footLeft {
+    width: 20%;
+    /* border: 2px solid; */
+}
+
+.footCenter {
+    width: 50%;
+    /* border: 2px solid; */
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */
+}
+
+.footList {
+    width: 33%;
+    /* border: 2px solid; */
+}
+
+.footList>h1 {
+    color: rgb(255, 84, 84);
+    font-size: 18px;
+    text-align: center;
+}
+
+.footList>ul>li {
+    text-align: center;
+    padding: 5px;
+}
+
+.footList>ul>li>a {
+    color: #a9a9a9;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.footList>ul>li>a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footRight {
+    width: 30%;
+}
+
+.footRight>h1 {
+    font-size: 22px;
+    color: red;
+}
+
+.footRight>ul>li>a {
+    padding: 10px 5px;
+    font-size: 18px;
+    color: grey;
+    transition: all 0.2s;
+}
+
+.footRight>ul>li>a:hover {
+    color: white;
+    text-decoration: underline; 
+}
+
+.fa-brands {
+    /* background-color: white; */
+    padding: 3px;
+    margin: 2px 0;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.fa-brands:hover {
+    background-color: white;
+}
+
+.fa-instagram:hover {
+    color: #f602b2;
+}
+
+.fa-linkedin:hover {
+    color: #0076b4;
+}
+
+.fa-github:hover {
+    color: black;
+}

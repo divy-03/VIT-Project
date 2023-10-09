@@ -6,7 +6,9 @@
 
 .ProductDetails {
     /* border: 2px solid blue; */
-    /* height: 90vh; */
+    height: calc(100vh - 55px);
+    width: 100vw;
+    /* position: static; */
     display: flex;
     flex-direction: row;
     justify-content: center;

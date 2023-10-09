@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import "./Home.css";
 import HeadBanner from "../layout/Header/HeadBanner";
+import Footer from "../layout/Footer/Footer";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <p className="XL">X</p>
         <pre>changers</pre>
       </div>
+      <Footer />
     </Fragment>
   );
 };

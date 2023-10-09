@@ -62,10 +62,25 @@
     padding-bottom: 2px;
 }
 
+.Vbig {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* color: red; */
+    font-size: 6rem;
+    font-style: italic;
+    padding-bottom: 2px;
+}
+
 .X {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: red;
     font-size: 26px;
+    font-style: italic;
+}
+
+.Xbig {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 7rem;
     font-style: italic;
 }
 

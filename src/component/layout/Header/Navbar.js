@@ -228,12 +228,6 @@ const Navbar = () => {
               </div> */}
             </li>
             <li>
-              <Link to="/new">What's new</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
               <Link to="/account">
                 <i className="fa fa-solid fa-user"></i>
               </Link>
@@ -243,29 +237,27 @@ const Navbar = () => {
                 <button className="searchBtn" onClick={toggleSearch}>
                   <i className="fa fa-solid fa-magnifying-glass"></i>
                 </button>
+                <form onSubmit={handleSearch}>
                 <input
                   type="text"
                   className={`searchBar-${visibility}`}
                   placeholder="Search Here..."
                   onChange={(e) => setKeyword(e.target.value)}
                 />
-                <button
+                <input
                   // className="search-btn"
-                  onClick={handleSearch}
+                  type="submit"
+                  value={"Search"}
                   className={`searchBar-${visibility}`}
-                >
-                  Search
-                </button>
+                />
+                </form>
               </div>
             </li>
           </ul>
         </div>
         <div className="navRight">
-          <Link to="/sell" className="button-86">
+          <Link to="/product/new" className="button-87">
             Sell
-          </Link>
-          <Link to="/rent" className="button-87">
-            Rent
           </Link>
           <button className="button-86" onClick={handleLogOut}>
             LogOut

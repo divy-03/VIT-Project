@@ -39,6 +39,9 @@ const LoginSignUp = () => {
       toast.error(result.error.data.error);
     } else {
       if (result.data.success === true) {
+        toast.success("Logges In Successfully");
+        toast.success(`Welcome again ${result.data.user.name}`);
+        console.log(result.data);
         navigate("/");
       }
     }
@@ -47,14 +50,21 @@ const LoginSignUp = () => {
   const registerSubmit = async (e) => {
     e.preventDefault();
 
-    const result = await addUser({ name, email, password, avatar });
+    try {
+      const result = await addUser({ name, email, password, avatar });
 
-    if (result.error) {
-      toast.error(result.error.data.error);
-    } else {
-      if (result.data.success === true) {
-        navigate("/");
+      if (result.error) {
+        toast.error(result.error.data.error);
+      } else {
+        if (result.data.success === true) {
+          navigate("/");
+          toast.success(`${result.data.user.name} is registered successfully`);
+        }
       }
+    } catch (error) {
+      // Handle any unexpected errors here
+      console.error(error);
+      toast.error("An error occurred during registration.");
     }
   };
 
@@ -105,7 +115,14 @@ const LoginSignUp = () => {
           <div className="line">
             <button ref={switcherTab}></button>
           </div>
-          <div className="vitLogo">VIT LOGO</div>
+          <div className="log">
+            <img
+              src={
+                "https://o.remove.bg/downloads/4c33c327-3453-4ba6-9bb2-8eca327b474d/VitLogo-removebg-preview.png"
+              }
+              alt="Vit"
+            />
+          </div>
           <form className="loginForm" ref={loginTab} onSubmit={loginSubmit}>
             <div className="loginEmail">
               <i class="fa-solid fa-envelope"></i>
