@@ -9,20 +9,48 @@ const CreateProduct = () => {
   const [prodDesc, setProdDesc] = useState("");
   const [priceType, setPriceType] = useState("");
   const [prodPrice, setProdPrice] = useState("");
+  const [prodPreview, setProdPreview] = useState(
+    "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
+  );
+  const [prodImage, setProdImage] = useState("");
+  const [product, setProduct] = useState({
+    name: "",
+    description:"",
+    priceType: "",
+    category: "",
+    fixedPrice: "",
+  })
 
   const [createProduct, { isLoading }] = useCreateProductMutation();
 
+  const registerDataChange = (e) => {
+    if (e.target.name === "prodImage") {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setProdPreview(reader.result);
+          setProdImage(reader.result);
+        }
+      };
+
+      reader.readAsDataURL(e.target.files[0]);
+    } else {
+      setProduct({ ...product, [e.target.name]: e.target.value });
+    }
+  };
+
   const handleCreateProduct = async (e) => {
+    const {name, description, category, priceType, fixedPrice} = product;
+
     e.preventDefault();
-    console.log("Product created");
-    console.log(prodName, prodCat, prodDesc, priceType, prodPrice);
 
     const result = await createProduct({
-      name: prodName,
-      description: prodDesc,
-      category: prodCat,
-      priceType: priceType,
-      fixedPrice: prodPrice,
+      name,
+      description,
+      category,
+      priceType,
+      fixedPrice,
       id: "65201920871221b021b5f456",
       images: [
         {
@@ -46,7 +74,20 @@ const CreateProduct = () => {
         <p className="sellHead">SELL YOUR PRODUCTS ONLINE</p>
         {/* <p className="bgSellTxt">Sell Rent Exchange Buy</p> */}
         <div className="sellBox">
-          <form className="sellForm" onSubmit={handleCreateProduct}>
+          <form
+            className="sellForm"
+            onSubmit={handleCreateProduct}
+            encType="multipart/form-data"
+          >
+            <div id="prodImage">
+              <img src={prodPreview} alt="Product Preview" />
+              <input
+                type="file"
+                name="prodImage"
+                accept="image/jpeg, image/png, image/gif"
+                onChange={registerDataChange}
+              />
+            </div>
             <div className="prodName">
               <p className="label">Name</p>
               <input
