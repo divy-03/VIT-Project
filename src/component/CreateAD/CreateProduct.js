@@ -2,70 +2,75 @@ import React, { Fragment, useState } from "react";
 import MetaData from "../layout/Title/MetaData";
 import { useCreateProductMutation } from "../../Product/productApi";
 import "./createProduct.css";
+import Loader from "../layout/Loader/Loader";
+import { toast } from "react-toastify";
 
 const CreateProduct = () => {
-  const [prodName, setProdName] = useState("");
-  const [prodCat, setProdCat] = useState("");
-  const [prodDesc, setProdDesc] = useState("");
+  // const [prodName, setProdName] = useState("");
+  // const [prodCat, setProdCat] = useState("");
+  // const [prodDesc, setProdDesc] = useState("");
+  // const [prodPrice, setProdPrice] = useState("");
   const [priceType, setPriceType] = useState("");
-  const [prodPrice, setProdPrice] = useState("");
-  const [prodPreview, setProdPreview] = useState(
-    "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
-  );
-  const [prodImage, setProdImage] = useState("");
   const [product, setProduct] = useState({
     name: "",
-    description:"",
-    priceType: "",
+    description: "",
     category: "",
     fixedPrice: "",
-  })
+  });
 
   const [createProduct, { isLoading }] = useCreateProductMutation();
 
-  const registerDataChange = (e) => {
-    if (e.target.name === "prodImage") {
-      const reader = new FileReader();
+  const { name, description, category, fixedPrice } = product;
 
-      reader.onload = () => {
-        if (reader.readyState === 2) {
-          setProdPreview(reader.result);
-          setProdImage(reader.result);
-        }
-      };
-
-      reader.readAsDataURL(e.target.files[0]);
+  const registerProduct = (e) => {
+    if (e.target.name === "image") {
     } else {
       setProduct({ ...product, [e.target.name]: e.target.value });
     }
   };
 
   const handleCreateProduct = async (e) => {
-    const {name, description, category, priceType, fixedPrice} = product;
-
     e.preventDefault();
 
-    const result = await createProduct({
-      name,
-      description,
-      category,
-      priceType,
-      fixedPrice,
-      id: "65201920871221b021b5f456",
-      images: [
-        {
-          public_id: "This is sample image",
-          url: "https://picsum.photos/250/250",
-        },
-        {
-          public_id: "This is sample image",
-          url: "https://picsum.photos/250/249",
-        },
-      ],
-    });
+    try {
+      const response = await createProduct({
+        name,
+        description,
+        category,
+        priceType,
+        fixedPrice,
+        user: "651cfbf74b5b4f9e8ff285e0",
+        images: [
+          {
+            public_id: "This is sample image",
+            url: "https://picsum.photos/250/250",
+          },
+          {
+            public_id: "This is sample image",
+            url: "https://picsum.photos/250/249",
+          },
+        ],
+      });
 
-    console.log(result.data);
+      if (response.error) {
+        toast.error(response.error.data.error);
+      } else {
+        if (response.data.success) {
+          toast.success("Product created Successfully");
+        }
+      }
+    } catch (error) {
+      toast.error(error);
+    }
   };
+
+  if (isLoading) {
+    return (
+      <Fragment>
+        <Loader />
+      </Fragment>
+    );
+  }
 
   return (
     <Fragment>
@@ -74,27 +79,15 @@ const CreateProduct = () => {
         <p className="sellHead">SELL YOUR PRODUCTS ONLINE</p>
         {/* <p className="bgSellTxt">Sell Rent Exchange Buy</p> */}
         <div className="sellBox">
-          <form
-            className="sellForm"
-            onSubmit={handleCreateProduct}
-            encType="multipart/form-data"
-          >
-            <div id="prodImage">
-              <img src={prodPreview} alt="Product Preview" />
-              <input
-                type="file"
-                name="prodImage"
-                accept="image/jpeg, image/png, image/gif"
-                onChange={registerDataChange}
-              />
-            </div>
+          <form className="sellForm" onSubmit={handleCreateProduct}>
             <div className="prodName">
               <p className="label">Name</p>
               <input
                 type="text"
                 placeholder="Product Name"
-                value={prodName}
-                onChange={(e) => setProdName(e.target.value)}
+                value={name}
+                name="name"
+                onChange={registerProduct}
               />
             </div>
             <div className="prodCat">
@@ -102,8 +95,9 @@ const CreateProduct = () => {
               <input
                 type="text"
                 placeholder="Product Category"
-                value={prodCat}
-                onChange={(e) => setProdCat(e.target.value)}
+                value={category}
+                name="category"
+                onChange={registerProduct}
               />
             </div>
             <div className="prodDesc">
@@ -111,8 +105,9 @@ const CreateProduct = () => {
               <input
                 type="text"
                 placeholder="Product Description"
-                value={prodDesc}
-                onChange={(e) => setProdDesc(e.target.value)}
+                value={description}
+                name="description"
+                onChange={registerProduct}
               />
             </div>
             <div className="prodPriceType">
@@ -120,25 +115,29 @@ const CreateProduct = () => {
               <input
                 type="radio"
                 value={"fixed"}
+                name="priceType"
                 checked={priceType === "fixed"}
                 onChange={(e) => setPriceType("fixed")}
-              />
+              />{" "}
+              <span>Fixed</span>
               <input
                 type="radio"
                 value={"negotiable"}
+                name="priceType"
                 checked={priceType === "negotiable"}
                 onChange={(e) => setPriceType("negotiable")}
               />
+              <span>Negotiable</span>
             </div>
             <div className="prodPrice">
-              <p className="label">
-                <input
-                  type="text"
-                  value={prodPrice}
-                  placeholder="Product Price"
-                  onChange={(e) => setProdPrice(e.target.value)}
-                />
-              </p>
+              <p className="label">Product Price</p>
+              <input
+                type="number"
+                value={fixedPrice}
+                name="fixedPrice"
+                placeholder="Product Price"
+                onChange={registerProduct}
+              />
             </div>
             <input
               type="submit"

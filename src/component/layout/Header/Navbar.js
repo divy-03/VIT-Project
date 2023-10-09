@@ -2,8 +2,11 @@ import React, { Fragment, useState } from "react";
 // import React, { Fragment } from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useGetMeQuery, useLogoutUserMutation } from "../../../User/userApi";
+// import { useGetMeQuery, useLogoutUserMutation } from "../../../User/userApi";
+import { useGetMeMutation, useLogoutUserMutation } from "../../../User/userApi";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
+import Loader from "../Loader/Loader";
 
 const Navbar = () => {
   const [visibility, setVisibility] = useState("hidden");
@@ -27,8 +30,12 @@ const Navbar = () => {
     // // }
   };
 
-  const { data } = useGetMeQuery();
-  console.log(data);
+  // const { data } = useGetMeQuery();
+  const [getMe, { isLoading }] = useGetMeMutation();
+  // console.log(data);
+  useEffect(() => {
+    getMe({ user: "651cfbf74b5b4f9e8ff285e0" });
+  }, [getMe]);
 
   const toggleSearch = () => {
     if (visibility === "hidden") {
@@ -66,6 +73,13 @@ const Navbar = () => {
     }
   };
 
+  if (isLoading) {
+    return (
+      <Fragment>
+        <Loader />
+      </Fragment>
+    );
+  }
   return (
     <Fragment>
       <nav className="navbar">
@@ -238,18 +252,18 @@ const Navbar = () => {
                   <i className="fa fa-solid fa-magnifying-glass"></i>
                 </button>
                 <form onSubmit={handleSearch}>
-                <input
-                  type="text"
-                  className={`searchBar-${visibility}`}
-                  placeholder="Search Here..."
-                  onChange={(e) => setKeyword(e.target.value)}
-                />
-                <input
-                  // className="search-btn"
-                  type="submit"
-                  value={"Search"}
-                  className={`searchBar-${visibility}`}
-                />
+                  <input
+                    type="text"
+                    className={`searchBar-${visibility}`}
+                    placeholder="Search Here..."
+                    onChange={(e) => setKeyword(e.target.value)}
+                  />
+                  <input
+                    // className="search-btn"
+                    type="submit"
+                    value={"Search"}
+                    className={`searchBar-${visibility}`}
+                  />
                 </form>
               </div>
             </li>

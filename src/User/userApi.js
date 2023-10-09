@@ -27,7 +27,7 @@ export const userApi = createApi({
     // LogOut User
     logoutUser: builder.mutation({
       query: () => ({
-        url: "/mock/testing",
+        url: "/auth/logout",
         method: "GET",
       }),
     }),
@@ -41,9 +41,18 @@ export const userApi = createApi({
       }),
     }),
 
-    // Get User Details
-    getMe: builder.query({
-      query: "/me", // Use a string here
+    // // Get User Details
+    // getMe: builder.query({
+    //   query: "/me", // Use a string here
+    // }),
+
+    // Get User Details Temp
+    getMe: builder.mutation({
+      query: (user) => ({
+        url: "/me",
+        method: "POST",
+        body: user,
+      }),
     }),
   }),
 });
@@ -51,7 +60,8 @@ export const userApi = createApi({
 export const {
   useAddUserMutation,
   useLoginUserMutation,
-  useGetMeQuery,
+  // useGetMeQuery,
+  useGetMeMutation,
   useForgotPasswordMutation,
   useLogoutUserMutation,
 } = userApi;

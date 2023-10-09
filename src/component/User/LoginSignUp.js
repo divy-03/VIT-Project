@@ -2,6 +2,7 @@ import React, { Fragment, useRef, useState } from "react";
 import "./LoginSignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAddUserMutation, useLoginUserMutation } from "../../User/userApi";
+import Loader from "../layout/Loader/Loader";
 import { toast } from "react-toastify";
 // import Loader from "../layout/Loader/Loader";
 
@@ -102,6 +103,14 @@ const LoginSignUp = () => {
     }
   };
 
+  if (isLoading) {
+    return (
+      <Fragment>
+        <Loader />
+      </Fragment>
+    );
+  }
+
   return (
     <Fragment>
       <div className="LoginSignUpContainer flex-col">
@@ -117,9 +126,7 @@ const LoginSignUp = () => {
           </div>
           <div className="log">
             <img
-              src={
-                "https://o.remove.bg/downloads/4c33c327-3453-4ba6-9bb2-8eca327b474d/VitLogo-removebg-preview.png"
-              }
+              src="https://res.cloudinary.com/djgwv8dck/image/upload/v1696859180/avatars/udbnv02ezeqs0qzltq3s.png"
               alt="Vit"
             />
           </div>
