@@ -34,6 +34,7 @@
     border-radius: 10px;
     transition: all 0.4s;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .listBtn:hover {

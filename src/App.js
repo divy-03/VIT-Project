@@ -15,6 +15,7 @@ import ForgotPassword from "./component/User/ForgotPassword";
 // import Footer from "./component/layout/Footer/Footer";
 import Loader from "./component/layout/Loader/Loader";
 import createProduct from "./component/CreateAD/CreateProduct";
+import UpdateProduct from "./component/CreateAD/UpdateProduct.js";
 import ProductCreated from "./component/CreateAD/ProductCreated";
 import MyListings from "./component/Products/MyListings.js";
 
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/product/created" Component={ProductCreated} />
           {/* Hardcoded user otherwise user only /my/listings */}
           <Route exact path="/my/listings/" Component={MyListings} />
+          <Route exact path="/product/update/:id" Component={UpdateProduct} />
         </Routes>
         {/* <Footer /> */}
         <div className="toastContainer">

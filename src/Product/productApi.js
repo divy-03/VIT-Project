@@ -30,6 +30,28 @@ export const productApi = createApi({
       }),
     }),
 
+    // Delete Product
+    deleteProduct: builder.mutation({
+      query: (id) => ({
+        url: `/product/${id}`,
+        method: "DELETE",
+      }),
+    }),
+
+    // Update Product
+    updateProduct: builder.mutation({
+      query: ({ id, product }) => {
+        if (!id || !product) {
+          throw new Error("Both 'id' and 'product' are required for updating.");
+        }
+        return {
+          url: `/product/${id}`,
+          method: "PUT",
+          body: product,
+        };
+      },
+    }),
+
     // My All Listings
     getMyListings: builder.query({
       query: (user) => `/products/my/${user}`,
@@ -44,4 +66,6 @@ export const {
   useGetProDetailsQuery,
   useCreateProductMutation,
   useGetMyListingsQuery,
+  useDeleteProductMutation,
+  useUpdateProductMutation,
 } = productApi;
