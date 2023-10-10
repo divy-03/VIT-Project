@@ -15,6 +15,8 @@ import ForgotPassword from "./component/User/ForgotPassword";
 // import Footer from "./component/layout/Footer/Footer";
 import Loader from "./component/layout/Loader/Loader";
 import createProduct from "./component/CreateAD/CreateProduct";
+import ProductCreated from "./component/CreateAD/ProductCreated";
+import MyListings from "./component/Products/MyListings.js";
 
 function App() {
   return (
@@ -31,6 +33,9 @@ function App() {
           <Route exact path="/account" Component={LoginSignUp} />
           <Route exact path="/password/forgot" Component={ForgotPassword} />
           <Route exact path="/loader" Component={Loader} />
+          <Route exact path="/product/created" Component={ProductCreated} />
+          {/* Hardcoded user otherwise user only /my/listings */}
+          <Route exact path="/my/listings/" Component={MyListings} />
         </Routes>
         {/* <Footer /> */}
         <div className="toastContainer">

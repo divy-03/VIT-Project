@@ -30,7 +30,10 @@ export const productApi = createApi({
       }),
     }),
 
-    // New
+    // My All Listings
+    getMyListings: builder.query({
+      query: (user) => `/products/my/${user}`,
+    }),
   }),
 });
 
@@ -40,4 +43,5 @@ export const {
   useGetSortedProductsQuery,
   useGetProDetailsQuery,
   useCreateProductMutation,
+  useGetMyListingsQuery,
 } = productApi;

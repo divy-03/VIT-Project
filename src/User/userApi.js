@@ -41,27 +41,18 @@ export const userApi = createApi({
       }),
     }),
 
-    // // Get User Details
-    // getMe: builder.query({
-    //   query: "/me", // Use a string here
-    // }),
-
-    // Get User Details Temp
-    getMe: builder.mutation({
-      query: (user) => ({
-        url: "/me",
-        method: "POST",
-        body: user,
-      }),
+    // Get User Details 
+    getMe: builder.query({
+      query: "/me",
     }),
+
   }),
 });
 
 export const {
   useAddUserMutation,
   useLoginUserMutation,
-  // useGetMeQuery,
-  useGetMeMutation,
+  useGetMeQuery,
   useForgotPasswordMutation,
   useLogoutUserMutation,
 } = userApi;

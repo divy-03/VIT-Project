@@ -1,0 +1,41 @@
+.listCardContainer {
+    /* width: 80vw; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px;
+    /* border: 2px solid white; */
+    padding: 10px;
+    /* border-radius: 10px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: all 0.4s;
+    overflow: hidden;
+    background-color: black;
+}
+
+.listDetails {
+    margin: 20px;
+    width: 20vw;
+}
+
+
+.listName {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+
+.listBtn {
+    text-align: center;
+    margin: 10px 20px;
+    width: 160px;
+    border: 1px solid grey;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: all 0.4s;
+    background-color: transparent;
+}
+
+.listBtn:hover {
+    transform: translateY(-4px);
+}

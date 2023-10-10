@@ -2,11 +2,8 @@ import React, { Fragment, useState } from "react";
 // import React, { Fragment } from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
-// import { useGetMeQuery, useLogoutUserMutation } from "../../../User/userApi";
-import { useGetMeMutation, useLogoutUserMutation } from "../../../User/userApi";
+import { useGetMeQuery, useLogoutUserMutation } from "../../../User/userApi";
 import { toast } from "react-toastify";
-import { useEffect } from "react";
-import Loader from "../Loader/Loader";
 
 const Navbar = () => {
   const [visibility, setVisibility] = useState("hidden");
@@ -30,12 +27,8 @@ const Navbar = () => {
     // // }
   };
 
-  // const { data } = useGetMeQuery();
-  const [getMe, { isLoading }] = useGetMeMutation();
-  // console.log(data);
-  useEffect(() => {
-    getMe({ user: "651cfbf74b5b4f9e8ff285e0" });
-  }, [getMe]);
+  // const [data] = useGetMeQuery();
+  useGetMeQuery();
 
   const toggleSearch = () => {
     if (visibility === "hidden") {
@@ -72,14 +65,6 @@ const Navbar = () => {
       toast.error(error);
     }
   };
-
-  if (isLoading) {
-    return (
-      <Fragment>
-        <Loader />
-      </Fragment>
-    );
-  }
   return (
     <Fragment>
       <nav className="navbar">
@@ -273,6 +258,7 @@ const Navbar = () => {
           <Link to="/product/new" className="button-87">
             Sell
           </Link>
+          {/* <button onClick={handleProfile}>Profile</button> */}
           <button className="button-86" onClick={handleLogOut}>
             LogOut
           </button>

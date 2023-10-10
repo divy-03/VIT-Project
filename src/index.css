@@ -79,3 +79,7 @@ body {
 logoVit>a>span {
   font-size: 4rem;
 }
+
+.m-2 {
+  margin: 40px;
+}

@@ -42,7 +42,6 @@ const LoginSignUp = () => {
       if (result.data.success === true) {
         toast.success("Logges In Successfully");
         toast.success(`Welcome again ${result.data.user.name}`);
-        console.log(result.data);
         navigate("/");
       }
     }

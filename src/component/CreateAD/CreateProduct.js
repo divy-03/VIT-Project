@@ -1,15 +1,13 @@
 import React, { Fragment, useState } from "react";
 import MetaData from "../layout/Title/MetaData";
+import { useNavigate } from "react-router-dom";
 import { useCreateProductMutation } from "../../Product/productApi";
 import "./createProduct.css";
 import Loader from "../layout/Loader/Loader";
 import { toast } from "react-toastify";
 
 const CreateProduct = () => {
-  // const [prodName, setProdName] = useState("");
-  // const [prodCat, setProdCat] = useState("");
-  // const [prodDesc, setProdDesc] = useState("");
-  // const [prodPrice, setProdPrice] = useState("");
+  const navigate = useNavigate();
   const [priceType, setPriceType] = useState("");
   const [product, setProduct] = useState({
     name: "",
@@ -57,6 +55,7 @@ const CreateProduct = () => {
       } else {
         if (response.data.success) {
           toast.success("Product created Successfully");
+          navigate("/product/created");
         }
       }
     } catch (error) {
