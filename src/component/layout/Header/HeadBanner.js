@@ -11,7 +11,7 @@ const HeadBanner = () => {
           <span>Find out your college needs and start buying and selling on VIT</span>
           <Link to="/" className="X">X</Link>
           <span>change </span>
-          <Link to="/sell">Now!</Link>
+          <Link to="/product/new">Now!</Link>
         </div>
       </div>
     </Fragment>

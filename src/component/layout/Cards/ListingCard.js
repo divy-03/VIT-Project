@@ -22,6 +22,7 @@ const ProductCard = (props) => {
     } else {
       if (response.data.success) {
         toast.success("Product deleted Successfully");
+        // TODO : try not to use reload instead call all listings again
         window.location.reload();
       }
     }
