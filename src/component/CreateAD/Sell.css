@@ -58,3 +58,7 @@
 .sellBody>div>div>a:hover {
     background-color: tomato;
 }
+
+.prodPriceType>span {
+    margin: 0 7px;
+}
