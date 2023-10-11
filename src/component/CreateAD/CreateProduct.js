@@ -38,6 +38,10 @@ const CreateProduct = () => {
         priceType,
         fixedPrice,
         user: "651cfbf74b5b4f9e8ff285e0",
+        image1: {
+          public_id: "This is sample image",
+          url: "this is url",
+        },
         images: [
           {
             public_id: "This is sample image",
