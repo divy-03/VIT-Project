@@ -255,6 +255,12 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navRight">
+          <Link to={"/my/wishlist"}>
+            <i
+              className="fa fa-solid fa-heart"
+              style={{ fontSize: "20px", margin: "0 20px" }}
+            ></i>{" "}
+          </Link>
           <Link to="/product/new" className="button-87">
             Sell
           </Link>

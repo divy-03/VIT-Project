@@ -56,6 +56,11 @@ export const productApi = createApi({
     getMyListings: builder.query({
       query: (user) => `/products/my/${user}`,
     }),
+
+    // Get my WishListed Items
+    getMyWishList: builder.query({
+      query: () => `/products/sort/time?wishListed=true`,
+    }),
   }),
 });
 
@@ -68,4 +73,5 @@ export const {
   useGetMyListingsQuery,
   useDeleteProductMutation,
   useUpdateProductMutation,
+  useGetMyWishListQuery,
 } = productApi;

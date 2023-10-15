@@ -42,16 +42,37 @@ const CreateProduct = () => {
           public_id: "This is sample image",
           url: "this is url",
         },
+        // wishListed: true,
+        // images: [
+        //   {
+        //     public_id: "This is sample image",
+        //     url: "https://www.brisbaneproductphotography.com.au/wp-content/uploads/2016/01/Black-Background-Product-Photography-18.jpg",
+        //   },
+        //   {
+        //     public_id: "This is sample image",
+        //     url: "https://img.freepik.com/free-photo/front-view-yellow-fragrance-bottle-with-golden-cap-white-wall_140725-11697.jpg",
+        //   },
+        // ],
         images: [
           {
-            public_id: "This is sample image",
-            url: "https://picsum.photos/250/250",
+            public_id: "Bicycle",
+            url: "https://img.ridewill.it/public/imgprod2021/big/fmoser-e-road-28-22v-250250wh-fsa-hm1-argento-nero-2022-b22mos-r3sa01-2-29d121.webp",
           },
           {
-            public_id: "This is sample image",
-            url: "https://picsum.photos/250/249",
+            public_id: "Bicycle",
+            url: "https://img.ridewill.it/public/imgprod2021/big/fmoser-e-road-28-22v-250250wh-fsa-hm1-argento-nero-2022-b22mos-r3sa01-3-29d122.webp",
+          },
+          {
+            public_id: "Bicycle",
+            url: "https://img.ridewill.it/public/imgprod2021/big/fmoser-e-road-28-22v-250250wh-fsa-hm1-argento-nero-2022-b22mos-r3sa01-1-29d120.jpg",
           },
         ],
+        // images: [
+        //   {
+        //     public_id: "phone",
+        //     url: "https://powermaccenter.com/cdn/shop/files/iPhone_13_Midnight_PDP_Image_Position-1A__en-US_823x.jpg?v=1692028841",
+        //   },
+        // ],
       });
 
       if (response.error) {

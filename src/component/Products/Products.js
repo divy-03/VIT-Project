@@ -65,6 +65,8 @@ const Products = () => {
                   desc={pro.description}
                   img={pro.images[0].url}
                   fixedPrice={pro.fixedPrice}
+                  priceType={pro.priceType}
+                  wishListed={pro.wishListed}
                 />
               ))
             )}

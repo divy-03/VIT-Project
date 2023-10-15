@@ -18,11 +18,12 @@ import createProduct from "./component/CreateAD/CreateProduct";
 import UpdateProduct from "./component/CreateAD/UpdateProduct.js";
 import ProductCreated from "./component/CreateAD/ProductCreated";
 import MyListings from "./component/Products/MyListings.js";
+import MyWishList from "./component/Products/MyWishList.js";
 
 function App() {
   return (
     <Fragment>
-      <Router>
+      <Router>  
         <Header />
         <Routes>
           <Route exact path="/" Component={Home} />
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/products" Component={Products} />
           <Route exact path="/products/search/:keyword" Component={Products} />
           <Route exact path="/product/:id" Component={ProductDetails} />
+          <Route exact path="/my/wishlist" Component={MyWishList} />
           <Route exact path="/account" Component={LoginSignUp} />
           <Route exact path="/password/forgot" Component={ForgotPassword} />
           <Route exact path="/loader" Component={Loader} />

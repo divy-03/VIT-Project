@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./ProductCard.css";
 
 const ProductCard = (props) => {
-  const { name, desc, fixedPrice, id, img } = props;
+  const { name, desc, fixedPrice, id, img, priceType, wishListed } = props;
 
   let slicedDesc = desc;
 
@@ -15,9 +15,16 @@ const ProductCard = (props) => {
     <Fragment>
       <Link to={`/product/${id}`} className="proCardContainer">
         <img src={img} alt="HeroImg" />
+        <i
+          className="fa fa-solid fa-heart"
+          style={{ color: wishListed ? "red" : "gray" }}
+        ></i>
+
         <div className="details">
           <h2 className="name">{name}</h2>
           <p>{slicedDesc}</p>
+          <span>Price:</span>
+          <span style={{ color: "grey" }}>{priceType}</span>
           <p className="price">₹{fixedPrice}</p>
         </div>
       </Link>
