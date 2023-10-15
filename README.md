@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# VitXchange - C2C Buy and Sell Website - Frotend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the frontend repository for VitXchange C2C (Consumer-to-Consumer) Buy and Sell website. This project is built using a range of technologies to create a user-friendly and efficient platform for buying and selling items between consumers.
 
-## Available Scripts
+![VitXchange Logo](https://res.cloudinary.com/djgwv8dck/image/upload/v1697346595/products/WhatsApp_Image_2023-10-10_at_00.15.37_19b77690_yitpki.jpg)
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+- **React:** The core framework for building the user interface.
+- **JSX:** A syntax extension for JavaScript for defining UI components.
+- **CSS:** Cascading Style Sheets for styling and layout.
+- **Redux Toolkit:** A powerful library for managing application state.
+- **RTK Query:** Used for efficient data fetching and management of API data.
+- **React Router DOM:** For handling client-side routing and navigation.
+- **React Toastify:** To provide informative and user-friendly notifications.
+- **Font Awesome:** For including icons and symbols in the UI.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project structure is organized to separate concerns and maintain a clean codebase. Here's a brief overview:
 
-### `npm test`
+- **src/component:** Contains React components used in the application.
+- **src/component/layout:** Contains basic layout component that every page requires, like Header, Navbar, Footer, Loader, etc.
+- **src/Product/productApi.js:** Contains rtk-query functions which send request to Product Api's.
+- **src/User/userApi.js:** Contains rtk-query functions which send request to User Api's.  
+- **src/App.js:** Contains all the routes to different pages.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## References
 
-### `npm run build`
+The following technologies are used and have taken reference from their documentations:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. [React-router-dom](https://reactrouter.com/en/main/start/tutorial)
+2. [Redux Toolkit](https://redux-toolkit.js.org/introduction/getting-started)
+3. [Rtk-Query](https://redux-toolkit.js.org/rtk-query/overview)
+4. [React-toastify](https://www.npmjs.com/package/react-toastify)
+5. [Fotawesome](https://fontawesome.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
+1. Clone this repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/divy-03/VIT-Project.git
+2. Change directory to the project folder:
 
-### `npm run eject`
+   ```bash
+   cd VIT-Project
+3. Initialize react app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npx create-react-app ./
+   
+4. Install project dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm install
+5. Start the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   npm start
+This will start the development server, and you can access the website in your browser at http://localhost:3000
