@@ -8,9 +8,9 @@ const HeadBanner = () => {
       <div className="headBanner">
         {/* <h1>Buy and Sell Used Products within our VIT Bhopal Campus</h1> */}
         <div>
-          <span>Find out your college needs and start buying and selling on VITrade </span>
-          {/* <Link to="/" className="X">X</Link> */}
-          {/* <span>change </span> */}
+          <span>Find out your college needs and start buying and selling on VIT</span>
+          <Link to="/" className="X">X</Link>
+          <span>change </span>
           <Link to="/product/new">Now!</Link>
         </div>
       </div>

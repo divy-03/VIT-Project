@@ -43,9 +43,9 @@
     transition: all 0.4s;
 }
 
-.logo > span {
+/* .logo > span {
     font-size: 12px;
-}
+} */
 
 .logo:hover {
     cursor: pointer;

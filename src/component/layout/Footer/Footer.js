@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="vitLogo">
             <Link to="/" className="logoVit">
               <span className="Vbig">V</span>
-              <span className="Xbig">T</span>
+              <span className="Xbig">X</span>
             </Link>
           </div>
           <div className="flex-row">
@@ -18,10 +18,10 @@ const Footer = () => {
               VIT
             </Link>
             <Link to="/" className="X">
-              {/* X */}
+              X
             </Link>
             <Link to="/" className="logoTxt">
-              rade
+              change
             </Link>
           </div>
         </div>

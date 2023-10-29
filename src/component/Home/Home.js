@@ -13,11 +13,11 @@ const Home = () => {
       <div className="mbt-2">
         <Carousel />
       </div>
-      {/* <div className="Landing-main">
+      <div className="Landing-main">
         <pre> Hello </pre>
         <p className="XL">X</p>
         <pre>changers</pre>
-      </div> */}
+      </div>
       <div className="containerBan">
         <BannerCard head="Kitchen" desc="149/-" />
         <BannerCard head="RC Cars" desc="349/-" />
