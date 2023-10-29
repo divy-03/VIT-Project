@@ -1,0 +1,44 @@
+.containerCat {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    display: flex;
+    margin: 10px;
+    border-radius: 5px;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerCat:hover {
+    transform: scale(1.03) translateY(-4px);
+}
+
+.catName {
+    position: absolute;
+    top: 20px;
+    color: white;
+    left: 10%;
+    font-size: 22px;
+}
+
+.catIMG {
+    width: 220px;
+    /* height: auto; */
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+@media screen and (max-width: 1100px) {
+    .catIMG {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .catIMG {
+        width: 180px;
+    }
+}
