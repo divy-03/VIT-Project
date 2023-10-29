@@ -71,17 +71,17 @@ const Navbar = () => {
         <div className="navLeft">
           {/* <img src="/logoX.png" alt="X" /> */}
           <Link to="/" className="logo">
-            <span className="V">V</span>
-            <span className="X">X</span>
+            <span className="V">VIT</span>
+            <span className="X">rade</span>
           </Link>
           <Link to="/" className="logoTxt">
             VIT
           </Link>
-          <Link to="/" className="X">
+          {/* <Link to="/" className="X">
             X
-          </Link>
+          </Link> */}
           <Link to="/" className="logoTxt">
-            change
+            rade
           </Link>
         </div>
         <div className="navCenter">

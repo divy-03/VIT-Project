@@ -41,11 +41,15 @@ export const userApi = createApi({
       }),
     }),
 
-    // Get User Details 
+    // Get User Details
     getMe: builder.query({
       query: "/me",
     }),
 
+    // Adming Get All Users
+    getAllUsers: builder.query({
+      query: () => "/admin/users", // Provide a function that returns the query string
+    }),
   }),
 });
 
@@ -53,6 +57,7 @@ export const {
   useAddUserMutation,
   useLoginUserMutation,
   useGetMeQuery,
+  useGetAllUsersQuery,
   useForgotPasswordMutation,
   useLogoutUserMutation,
 } = userApi;

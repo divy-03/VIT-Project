@@ -37,36 +37,36 @@ const CreateProduct = () => {
         category,
         priceType,
         fixedPrice,
-        user: "651cfbf74b5b4f9e8ff285e0",
         image1: {
           public_id: "This is sample image",
           url: "this is url",
         },
         // wishListed: true,
-        // images: [
-        //   {
-        //     public_id: "This is sample image",
-        //     url: "https://www.brisbaneproductphotography.com.au/wp-content/uploads/2016/01/Black-Background-Product-Photography-18.jpg",
-        //   },
-        //   {
-        //     public_id: "This is sample image",
-        //     url: "https://img.freepik.com/free-photo/front-view-yellow-fragrance-bottle-with-golden-cap-white-wall_140725-11697.jpg",
-        //   },
-        // ],
         images: [
           {
-            public_id: "Bicycle",
-            url: "https://img.ridewill.it/public/imgprod2021/big/fmoser-e-road-28-22v-250250wh-fsa-hm1-argento-nero-2022-b22mos-r3sa01-2-29d121.webp",
+            public_id: "This is sample image",
+            url: "https://www.brisbaneproductphotography.com.au/wp-content/uploads/2016/01/Black-Background-Product-Photography-18.jpg",
           },
           {
-            public_id: "Bicycle",
-            url: "https://img.ridewill.it/public/imgprod2021/big/fmoser-e-road-28-22v-250250wh-fsa-hm1-argento-nero-2022-b22mos-r3sa01-3-29d122.webp",
-          },
-          {
-            public_id: "Bicycle",
-            url: "https://img.ridewill.it/public/imgprod2021/big/fmoser-e-road-28-22v-250250wh-fsa-hm1-argento-nero-2022-b22mos-r3sa01-1-29d120.jpg",
+            public_id: "This is sample image",
+            url: "https://img.freepik.com/free-photo/front-view-yellow-fragrance-bottle-with-golden-cap-white-wall_140725-11697.jpg",
           },
         ],
+        user: "651cfbf74b5b4f9e8ff285e0",
+        // images: [
+        //   {
+        //     public_id: "Bicycle",
+        //     url: "https://img.ridewill.it/public/imgprod2021/big/fmoser-e-road-28-22v-250250wh-fsa-hm1-argento-nero-2022-b22mos-r3sa01-2-29d121.webp",
+        //   },
+        //   {
+        //     public_id: "Bicycle",
+        //     url: "https://img.ridewill.it/public/imgprod2021/big/fmoser-e-road-28-22v-250250wh-fsa-hm1-argento-nero-2022-b22mos-r3sa01-3-29d122.webp",
+        //   },
+        //   {
+        //     public_id: "Bicycle",
+        //     url: "https://img.ridewill.it/public/imgprod2021/big/fmoser-e-road-28-22v-250250wh-fsa-hm1-argento-nero-2022-b22mos-r3sa01-1-29d120.jpg",
+        //   },
+        // ],
         // images: [
         //   {
         //     public_id: "phone",

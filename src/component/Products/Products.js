@@ -52,9 +52,9 @@ const Products = () => {
           </div>
 
           <div className="containerProduct">
-            {data.products.length === 0 ? (
-              <div>
-                <h1> Oops! No Product Found</h1>
+            {data && data.products && data.products.length === 0 ? (
+              <div className="flex-row" style={{ height: "90vh" }}>
+                <h1 style={{ fontSize: "24px" }}> Oops! No Product Found</h1>
               </div>
             ) : (
               data.products.map((pro) => (

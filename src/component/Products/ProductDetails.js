@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useGetProDetailsQuery } from "../../Product/productApi";
 import MetaData from "../layout/Title/MetaData";
 // import ReactStars from "react-rating-stars-component";
@@ -61,7 +61,9 @@ const ProductDetails = () => {
 
           <div className="toCart">
             <button className="btn-pink ATC-btn">Add to Cart</button>
-            <button className="btn-pink BN-btn">Buy Now</button>
+            <Link to={`/buynow/${id}`} className="btn-pink BN-btn">
+              Contact Seller
+            </Link>
           </div>
 
           {/* <button className="submitReviews">Submit Review</button>   */}

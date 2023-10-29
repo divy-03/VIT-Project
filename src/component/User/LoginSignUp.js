@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAddUserMutation, useLoginUserMutation } from "../../User/userApi";
 import Loader from "../layout/Loader/Loader";
 import { toast } from "react-toastify";
+import SetCookie from "../../Tools/SetCookie";
 // import Loader from "../layout/Loader/Loader";
 
 const LoginSignUp = () => {
@@ -15,7 +16,8 @@ const LoginSignUp = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
-  const [avatar, setAvatar] = useState();
+  // const [avatar, setAvatar] = useState();
+  const avatar = "https://picsum.photos/250/250";
   const [avatarPreview, setAvatarPreview] = useState(
     "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
   );
@@ -40,7 +42,10 @@ const LoginSignUp = () => {
       toast.error(result.error.data.error);
     } else {
       if (result.data.success === true) {
-        toast.success("Logges In Successfully");
+        // Save the authToken as a cookie here
+        SetCookie("authToken", result.data.authToken, 7); // 7 days expiration
+
+        toast.success("Logged In Successfully");
         toast.success(`Welcome again ${result.data.user.name}`);
         navigate("/");
       }
@@ -69,20 +74,20 @@ const LoginSignUp = () => {
   };
 
   const registerDataChange = (e) => {
-    if (e.target.name === "avatar") {
-      const reader = new FileReader();
+    // if (e.target.name === "avatar") {
+    //   const reader = new FileReader();
 
-      reader.onload = () => {
-        if (reader.readyState === 2) {
-          setAvatarPreview(reader.result);
-          setAvatar(reader.result);
-        }
-      };
+    //   reader.onload = () => {
+    //     if (reader.readyState === 2) {
+    //       setAvatarPreview(reader.result);
+    //       setAvatar(reader.result);
+    //     }
+    //   };
 
-      reader.readAsDataURL(e.target.files[0]);
-    } else {
-      setUser({ ...user, [e.target.name]: e.target.value });
-    }
+    //   reader.readAsDataURL(e.target.files[0]);
+    // } else {
+    setUser({ ...user, [e.target.name]: e.target.value });
+    // }
   };
 
   const switchTabs = (e, tab, switcherTabRef) => {

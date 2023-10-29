@@ -7,12 +7,12 @@ import { useUpdateProductMutation } from "../../Product/productApi";
 
 const UpdateProduct = () => {
   const navigate = useNavigate();
-  const [priceType, setPriceType] = useState("");
+  const [priceType, setPriceType] = useState(null);
   const [product, setProduct] = useState({
-    name: "",
-    description: "",
-    category: "",
-    fixedPrice: "",
+    name: null,
+    description: null,
+    category: null,
+    fixedPrice: null,
   });
 
   const { id } = useParams();
@@ -35,11 +35,11 @@ const UpdateProduct = () => {
       const response = await updateProduct({
         id, // Pass the id directly
         product: {
-          name,
-          description,
-          category,
-          priceType,
-          fixedPrice,
+          ...(name && { name }),
+          ...(description && { description }),
+          ...(category && { category }),
+          ...(priceType && { priceType }),
+          ...(fixedPrice && { fixedPrice }),
           user: "651cfbf74b5b4f9e8ff285e0",
           images: [
             {

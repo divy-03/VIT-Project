@@ -2,25 +2,39 @@ import React, { Fragment } from "react";
 import ProductCard from "../layout/Cards/ProductCard";
 import { useGetMyWishListQuery } from "../../Product/productApi";
 import Loader from "../layout/Loader/Loader";
+import { Link } from "react-router-dom";
 
 const MyWishList = () => {
   const { data, error, isLoading } = useGetMyWishListQuery();
+
   if (isLoading) {
-    <div>
-      <Loader />
-    </div>;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
+
   if (error) {
-    <div>
-      <h1 style={{ fontSize: "3vmax", color: "gray" }}>{error.message}</h1>
-    </div>;
+    return (
+      <div>
+        <h1 style={{ fontSize: "3vmax", color: "gray" }}>{error.message}</h1>
+      </div>
+    );
   }
+
   return (
     <Fragment>
       <div className="containerProduct">
-        {data.products.length === 0 ? (
-          <div>
-            <h1> Oops! No Product Found</h1>
+        {data && data.products && data.products.length === 0 ? (
+          <div className="flex-col" style={{ height: "90vh" }}>
+            <h3 className="oops mb-1">
+              Oops! Products not found in your Wish List
+            </h3>
+            <span>Browse products and wish list your favourites</span>
+            <Link to={`/products`} className="btn mt-1">
+              Browse Products!
+            </Link>
           </div>
         ) : (
           data.products.map((pro) => (

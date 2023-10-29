@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import "./ProductCard.css";
 import { toast } from "react-toastify";
@@ -7,9 +7,9 @@ import "./ListingCard.css";
 import { useDeleteProductMutation } from "../../../Product/productApi";
 
 const ProductCard = (props) => {
-  const navigate = useNavigate();
 
   const { name, desc, fixedPrice, id, img } = props;
+  console.log(id);
 
   const [deleteProduct, { isLoading }] = useDeleteProductMutation();
 
@@ -26,10 +26,6 @@ const ProductCard = (props) => {
         window.location.reload();
       }
     }
-  };
-
-  const handleUpdate = (id) => {
-    navigate(`/product/update/${id}`);
   };
 
   if (isLoading) {
@@ -56,9 +52,9 @@ const ProductCard = (props) => {
           <Link to={`/product/${id}`} className="listBtn">
             Go to Product
           </Link>
-          <button className="listBtn" onClick={handleUpdate}>
+          <Link to={`/product/update/${id}`} className="listBtn">
             Update Product
-          </button>
+          </Link>
           <button className="listBtn" onClick={() => handleDelete(id)}>
             Delete Product
           </button>

@@ -19,11 +19,13 @@ import UpdateProduct from "./component/CreateAD/UpdateProduct.js";
 import ProductCreated from "./component/CreateAD/ProductCreated";
 import MyListings from "./component/Products/MyListings.js";
 import MyWishList from "./component/Products/MyWishList.js";
+import Users from "./component/Admin/All Users/Users";
+import BuyNow from "./component/BuyNow/BuyNow";
 
 function App() {
   return (
     <Fragment>
-      <Router>  
+      <Router>
         <Header />
         <Routes>
           <Route exact path="/" Component={Home} />
@@ -40,6 +42,8 @@ function App() {
           {/* Hardcoded user otherwise user only /my/listings */}
           <Route exact path="/my/listings/" Component={MyListings} />
           <Route exact path="/product/update/:id" Component={UpdateProduct} />
+          <Route exact path="/admin/users" Component={Users} />
+          <Route exact path="/buynow/:id" Component={BuyNow} />
         </Routes>
         {/* <Footer /> */}
         <div className="toastContainer">
